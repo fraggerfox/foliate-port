@@ -18,19 +18,22 @@ RUN_DEPENDS=	gjs-console:lang/gjs
 USES=		desktop-file-utils gettext gnome localbase meson python:3.6+ shebangfix
 USE_GNOME=	cairo gtk30 introspection
 
+INSTALLS_ICONS=	yes
+
 SHEBANG_FILES=	${WRKSRC}/build-aux/meson/postinstall.py \
-		${WRKSRC}/src/assets/KindleUnpack/compatibility_utils.py \
-		${WRKSRC}/src/assets/KindleUnpack/mobi_split.py \
-		${WRKSRC}/src/assets/KindleUnpack/mobiml2xhtml.py \
-		${WRKSRC}/src/assets/KindleUnpack/unipath.py
+		${WRKSRC}/src/assets/KindleUnpack/*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	johnfactotum
 
 GLIB_SCHEMAS=	com.github.johnfactotum.Foliate.gschema.xml
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/@PYTHON_VERSION@/${PYTHON_VERSION}/g' \
+		${WRKSRC}/src/main.js
+
 post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/bin/com.github.johnfactotum.Foliate \
+	@${RLN} ${STAGEDIR}${PREFIX}/bin/com.github.johnfactotum.Foliate \
 		${STAGEDIR}${PREFIX}/bin/foliate
 
 .include <bsd.port.mk>
