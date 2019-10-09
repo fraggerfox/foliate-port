@@ -15,7 +15,8 @@ BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	gjs-console:lang/gjs
 
-USES=		desktop-file-utils gettext gnome localbase meson python:3.6+ shebangfix
+USES=		desktop-file-utils gettext gnome localbase meson python:3.6+ \
+		shebangfix
 USE_GNOME=	cairo gtk30 introspection
 
 INSTALLS_ICONS=	yes
@@ -28,12 +29,17 @@ GH_ACCOUNT=	johnfactotum
 
 GLIB_SCHEMAS=	com.github.johnfactotum.Foliate.gschema.xml
 
+INSTALLATION_DIRS+=	libexec/foliate
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/@PYTHON_VERSION@/${PYTHON_VERSION}/g' \
 		${WRKSRC}/src/main.js
 
 post-install:
-	@${RLN} ${STAGEDIR}${PREFIX}/bin/com.github.johnfactotum.Foliate \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/foliate
+	@${MV} ${STAGEDIR}${PREFIX}/bin/com.github.johnfactotum.Foliate \
+		${STAGEDIR}${PREFIX}/libexec/foliate/com.github.johnfactotum.Foliate
+	@${RLN} ${STAGEDIR}${PREFIX}/libexec/foliate/com.github.johnfactotum.Foliate \
 		${STAGEDIR}${PREFIX}/bin/foliate
 
 .include <bsd.port.mk>
