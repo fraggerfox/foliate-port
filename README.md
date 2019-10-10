@@ -1,7 +1,7 @@
 foliate-port
 ============
 
-FreeBSD Ports script for script for Foliate.
+FreeBSD Ports script for Foliate.
 
 You can find Foliate [here][1]
 
