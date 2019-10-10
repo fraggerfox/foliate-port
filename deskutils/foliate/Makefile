@@ -15,14 +15,18 @@ BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	gjs-console:lang/gjs
 
-USES=		desktop-file-utils gettext gnome localbase meson python:3.6+ \
-		shebangfix
+USES=		desktop-file-utils gnome localbase meson python:3.6+ shebangfix
 USE_GNOME=	cairo gtk30 introspection
 
 INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	${WRKSRC}/build-aux/meson/postinstall.py \
 		${WRKSRC}/src/assets/KindleUnpack/*.py
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	johnfactotum
