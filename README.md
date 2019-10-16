@@ -38,3 +38,4 @@ BSD 2-clause. See LICENSE.
 [1]: https://johnfactotum.github.io/foliate/
 [2]: https://github.com/johnfactotum/foliate#installation
 [3]: https://github.com/johnfactotum
+[4]: https://www.freshports.org/deskutils/foliate
