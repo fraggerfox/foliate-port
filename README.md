@@ -1,11 +1,9 @@
 foliate-port
 ============
 
-FreeBSD Ports script for Foliate.
+FreeBSD [Ports][4] script for Foliate.
 
 You can find Foliate [here][1]
-
-NOTE: This package is not yet available in the ports tree.
 
 Installation
 ------------
@@ -29,6 +27,8 @@ Credits
 -------
 
 * Foliate is developed and maintained by [John Factotum][3].
+* Thanks to `@ppaeps` for a machine to do and test the port development and
+  testing out / fixing / helping committing the port.
 
 License
 -------
