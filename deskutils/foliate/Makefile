@@ -1,8 +1,8 @@
-# $FreeBSD$
+# $FreeBSD: head/deskutils/foliate/Makefile 514535 2019-10-15 15:04:13Z fox $
 
 PORTNAME=	foliate
 PORTVERSION=	1.5.3
-CATEGORIES=	wip deskutils
+CATEGORIES=	deskutils
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Simple and modern GTK eBook viewer
