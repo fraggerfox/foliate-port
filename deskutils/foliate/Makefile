@@ -1,4 +1,4 @@
-# $FreeBSD: head/deskutils/foliate/Makefile 514535 2019-10-15 15:04:13Z fox $
+# $FreeBSD: head/deskutils/foliate/Makefile 514717 2019-10-18 13:07:37Z tobik $
 
 PORTNAME=	foliate
 PORTVERSION=	1.5.3
@@ -32,8 +32,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	johnfactotum
 
 GLIB_SCHEMAS=	com.github.johnfactotum.Foliate.gschema.xml
-
-INSTALLATION_DIRS+=	libexec/foliate
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/@PYTHON_VERSION@/${PYTHON_VERSION}/g' \
