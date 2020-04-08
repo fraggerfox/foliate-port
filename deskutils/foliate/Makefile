@@ -1,7 +1,7 @@
-# $FreeBSD: head/deskutils/foliate/Makefile 514717 2019-10-18 13:07:37Z tobik $
+# $FreeBSD: head/deskutils/foliate/Makefile 531159 2020-04-08 23:29:02Z fox $
 
 PORTNAME=	foliate
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	fox@FreeBSD.org
